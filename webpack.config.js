@@ -1,26 +1,26 @@
-var path = require('path');
-var SRC_DIR = path.join(__dirname, '/client/src');
-var DIST_DIR = path.join(__dirname, '/client/dist');
+var path = require("path");
+var SRC_DIR = path.join(__dirname, "/client/src");
+var DIST_DIR = path.join(__dirname, "/client/dist");
 
 module.exports = {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
-    filename: 'bundle.js',
-    path: DIST_DIR
+    filename: "bundle.js",
+    path: DIST_DIR,
   },
   mode: "development",
   module: {
     rules: [
       {
         test: /\.jsx?/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         options: {
-          'presets': ['@babel/preset-env', '@babel/preset-react']
-        }
-      }
-    ]
+          presets: ["@babel/preset-env", "@babel/preset-react"],
+        },
+      },
+    ],
   },
   resolve: {
-    extensions: ['.js', '.jsx']
-  }
+    extensions: [".js", ".jsx"],
+  },
 };
